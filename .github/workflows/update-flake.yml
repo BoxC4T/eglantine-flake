@@ -28,6 +28,7 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
+      
       - name: Get latest Eglantine release
         id: release
         shell: bash
@@ -37,15 +38,20 @@ jobs:
           release=$(curl -fsSL \
             -H "Accept: application/vnd.github+json" \
             -H "User-Agent: eglantine-nix-updater" \
-            https://api.github.com/repos/Djihads80/Eglantine/releases/latest)
+            "https://api.github.com/repos/Djihads80/Eglantine/releases?per_page=1")
 
-          tag=$(echo "$release" | jq -er '.tag_name')
+          tag=$(echo "$release" | jq -er '.[0].tag_name')
 
           asset_url=$(echo "$release" | jq -er '
-            [.assets[]
+            [.[0].assets[]
               | select(.name | test("linux-x86_64.*\\.AppImage$"; "i"))
             ][0].browser_download_url
           ')
+
+          if [ -z "$asset_url" ] || [ "$asset_url" = "null" ]; then
+            echo "No Linux x86_64 AppImage found!"
+            exit 1
+          fi
 
           version="${tag#build-}"
 
