@@ -12,11 +12,11 @@
 
     eglantine = pkgs.appimageTools.wrapType2 {
       pname = "eglantine";
-      version = "branch-fix-oot-blackscreen-17ac56ed";
+      version = "branch-nx2-experimental-efb9fb18";
 
       src = pkgs.fetchurl {
-        url = "https://github.com/Djihads80/Eglantine/releases/download/branch-fix-oot-blackscreen-17ac56ed/eglantine-linux-x86_64.AppImage";
-        hash = "sha256-u5n0Fa2n0OoF1a9qrBh+IYS5vQq/4lnbxxtXg85mpzw=";
+        url = "https://github.com/Djihads80/Eglantine/releases/download/branch-nx2-experimental-efb9fb18/eglantine-linux-x86_64-pgo.AppImage";
+        hash = "sha256-SqbRBzuQLQY/XbiAe3kIN4ivM/7Ec+WF0sRQM475cl8=";
       };
       extraPkgs = pkgs:
         with pkgs; [
