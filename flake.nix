@@ -12,11 +12,11 @@
 
     eglantine = pkgs.appimageTools.wrapType2 {
       pname = "eglantine";
-      version = "branch-nx2-experimental-efb9fb18";
+      version = "branch-updater-tester-builds-b7704dc8";
 
       src = pkgs.fetchurl {
-        url = "https://github.com/Eglantine-Community/Eglantine/releases/download/branch-nx2-experimental-efb9fb18/eglantine-linux-x86_64-pgo.AppImage";
-        hash = "sha256-86ahB3BCjn8jKV9bgAnlJ/u8nkleB2ftNCupnxv+dZw=";
+        url = "https://github.com/Eglantine-Community/Eglantine/releases/download/branch-updater-tester-builds-b7704dc8/eglantine-linux-x86_64.AppImage";
+        hash = "sha256-U5qWbdZnuo92l+78BkEGG9hohOPn6yfduPxgbM8ddhI=";
       };
       extraPkgs = pkgs:
         with pkgs; [
