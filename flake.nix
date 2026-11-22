@@ -12,11 +12,11 @@
 
     eglantine = pkgs.appimageTools.wrapType2 {
       pname = "eglantine";
-      version = "daily-20261121";
+      version = "daily-20261122";
 
       src = pkgs.fetchurl {
-        url = "https://github.com/Eglantine-Community/Eglantine/releases/download/daily-20261121/eglantine-linux-x86_64-pgo.AppImage";
-        hash = "sha256-c7lhstt1FAeZikcRedfA1gEI7mXoO+8P83mWLgtsKJI=";
+        url = "https://github.com/Eglantine-Community/Eglantine/releases/download/daily-20261122/eglantine-linux-x86_64-pgo.AppImage";
+        hash = "sha256-N5rmCjI54sXkfdc08PJWW3svJv8GDGYT8P+l9rU7i1w=";
       };
       extraPkgs = pkgs:
         with pkgs; [
